@@ -636,8 +636,8 @@ ul {
 .backup-control .date label::after {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 3px;
+  left: 5px;
+  top: 5px;
   width: 12px;
   height: 12px;
   background: var(--blue-color);
@@ -1147,3 +1147,55 @@ ul {
   }
 }
 /* End Animation */
+input:focus::placeholder,
+textarea:focus::placeholder{
+  opacity: 0;
+  transition: .3s;
+}
+
+.test {
+  position: relative;
+  margin-left:300px 
+}
+.test::before {
+  content:"";
+  position:absolute;
+  width:2px;
+  height: 90%;
+  background-color: var(--blue-color);
+  left : -25px;
+  top:10px
+}
+
+.test li {
+  position: relative;
+  font-size: 30px;
+}
+
+.test li::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translateY(-50%);
+  left: -12.1%;
+  top: 50%;
+  border: 1px solid white;
+  outline: 1px solid var(--blue-color);
+}
+.test li.done::before {
+  background-color: var(--blue-color);
+}
+.test li.procces::before {
+  animation: show-hide 1.5s infinite;
+}
+@keyframes show-hide {
+  0%, 100% {
+    background-color:white;
+  }
+  50% {
+    background-color:var(--blue-color);
+  }
+}
